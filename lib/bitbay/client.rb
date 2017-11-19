@@ -7,7 +7,7 @@ module Bitbay
     PUBLIC_HOST = 'https://bitbay.net/API/Public/'
     PRIVATE_HOST = 'https://bitbay.net/API/Trading/tradingApi.php'
 
-    attr_reader :key, :secret, :trading
+    attr_reader :key, :secret
 
     def initialize(attrs = {})
       @key      = attrs[:key]
@@ -15,7 +15,6 @@ module Bitbay
     end
 
     def get_public(method, market = 'BTCPLN', params = {})
-
       response = connection.get do |req|
         req.url("#{PUBLIC_HOST}#{market}/#{method}.json")
         req.params.merge!(params)
@@ -26,7 +25,6 @@ module Bitbay
 
     def get(method, params = {})
       moment = Time.now.to_i
-
       response = connection.post do |req|
         req.url(PRIVATE_HOST)
         req.params.merge!(params)          

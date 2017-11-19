@@ -17,7 +17,6 @@ module Bitbay
 
       def self.get(market = "BTCPLN", params = {})
         response = client.get_public('ticker', market, params)
-        puts response['max']
         return new({
           market: market,
           max: response['max'],

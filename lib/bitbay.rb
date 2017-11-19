@@ -3,6 +3,7 @@ require "bitbay/version"
 module Bitbay
   require 'bitbay/client'
   require 'bitbay/configuration'
+  require 'bitbay/public/orderbook'
   require 'bitbay/public/ticker'
   require 'bitbay/public/trades'
 
