@@ -1,0 +1,3 @@
+module Bitbay
+  VERSION = "0.0.1"
+end
